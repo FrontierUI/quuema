@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+@font-face {
+  font-family: 'Grifter-Bold';
+  src: url('/assets/fonts/grifterbold.ttf') format(truetype);
+}
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  background: #000;
+  font-family: 'Inter', sans-serif;
+  color: #fff;
+  z-index: 1;
+}
+
+.grifter {
+  font-family: 'Grifter-Bold';
+  font-weight: bold;
+}
+
+a,
+a:hover {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+/* most used Classes */
+
+.flexy {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.centerBetween {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.itemStart {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.justStart {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.justCenter {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.justend {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+
+/* most used Classes */
+
+.vertLine {
+  position: relative;
+  z-index: 1;
+}
+
+.vertLine::before {
+  position: absolute;
+  top: 28px;
+  content: '';
+  background: #ffffff7a;
+  width: 2px;
+  height: 15rem;
+  z-index: -1;
+}
+
+/* .manHeroImg {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+.manHeroImg::before {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100vh;
+  right: 0;
+  z-index: -1;
+  background-image: url('/assets/images/manHomehero.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+} */
