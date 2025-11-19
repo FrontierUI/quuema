@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 @font-face {
-  font-family: 'Grifter-Bold';
-  src: url('/assets/fonts/grifterbold.ttf') format(truetype);
+  font-family: 'AspireSC-Regular';
+  src: url('/assets/fonts/AspireSC-Regular.ttf') format(truetype);
 }
 
 *,
@@ -16,15 +16,19 @@ body {
   width: 100%;
   height: 100%;
   overflow-x: hidden;
-  background: #000;
+  background: #fff;
   font-family: 'Inter', sans-serif;
-  color: #fff;
+  color: #000;
   z-index: 1;
+  background-image: url('/assets/images/bgpat.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
-.grifter {
-  font-family: 'Grifter-Bold';
-  font-weight: bold;
+.aspiresc {
+  font-family: 'AspireSC-Regular';
+  font-weight: 400;
 }
 
 a,
@@ -45,6 +49,11 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.centy {
+  display: flex;
+  align-items: center;
 }
 
 .centerBetween {
@@ -94,21 +103,179 @@ a:hover {
   z-index: -1;
 }
 
-/* .manHeroImg {
-  position: relative;
-  z-index: 1;
-  width: 100%;
+.heroTitle {
+  font-size: calc(8rem + (60 - 0) * ((100vw - 300px) / (2100 - 300)));
+  text-transform: uppercase;
+  letter-spacing: 2rem;
 }
 
-.manHeroImg::before {
+.written {
+  writing-mode: sideways-lr;
+}
+
+.written2 {
+  writing-mode: sideways-rl;
+}
+
+.newsTitle {
+  font-size: calc(4rem + (100 - 50) * ((100vw - 300px) / (2600 - 300)));
+  text-transform: uppercase;
+  letter-spacing: 1rem;
+}
+
+.newsTitle1 {
+  font-size: calc(4rem + (60 - 30) * ((100vw - 300px) / (2400 - 300)));
+  text-transform: uppercase;
+  letter-spacing: 1rem;
+}
+
+.prodpat {
+  position: relative;
+  z-index: 1;
+}
+
+.prodpat::before {
   position: absolute;
   content: '';
-  width: 100%;
-  height: 100vh;
-  right: 0;
-  z-index: -1;
-  background-image: url('/assets/images/manHomehero.png');
-  background-position: center;
-  background-repeat: no-repeat;
+  background: url('/assets/images/prodpat.png');
   background-size: cover;
-} */
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.dott {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+}
+
+.dott::after {
+  position: absolute;
+  content: '';
+  top: -2rem;
+  background: url('/assets/images/dot.png');
+  background-size: 32% 68%;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+@media screen and (max-width: 600px) {
+  .heroTitle {
+    font-size: calc(3rem + (60 - 30) * ((100vw - 300px) / (600 - 300)));
+    letter-spacing: 0.5rem;
+  }
+
+  .newsTitle {
+    font-size: calc(2rem + (60 - 30) * ((100vw - 300px) / (600 - 300)));
+    letter-spacing: 0.5rem;
+  }
+
+  .newsTitle1 {
+    font-size: calc(1rem + (60 - 10) * ((100vw - 300px) / (600 - 110)));
+    letter-spacing: 0.5rem;
+  }
+
+  .dott::after {
+    top: -5rem;
+    background-size: 75% 43%;
+  }
+}
+
+/* Accordion start  */
+
+.accordion .accordion-item {
+  border-bottom: 1px solid #000;
+}
+.accordion .accordion-item button[aria-expanded='true'] {
+  border-bottom: 1px solid #838383;
+}
+.accordion button {
+  position: relative;
+  display: block;
+  text-align: left;
+  width: 100%;
+  padding: 0.5em 0;
+  color: #242527;
+  font-size: 1.25rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  border: none;
+  background: none;
+  outline: none;
+}
+.accordion button:hover,
+.accordion button:focus {
+  cursor: pointer;
+  color: #000;
+}
+.accordion button:hover::after,
+.accordion button:focus::after {
+  cursor: pointer;
+  color: #000;
+  border: 1px solid #000;
+}
+.accordion button .accordion-title {
+  padding: 1em 1.5em 1em 0;
+}
+.accordion button .icon {
+  display: inline-block;
+  position: absolute;
+  top: 18px;
+  right: 0;
+  width: 22px;
+  height: 22px;
+  border: 1px solid;
+  border-radius: 4px;
+  background-color: #e7000b;
+  color: #fff;
+}
+.accordion button .icon::before {
+  display: block;
+  position: absolute;
+  content: '';
+  top: 9px;
+  left: 5px;
+  width: 10px;
+  height: 2px;
+  background: currentColor;
+}
+.accordion button .icon::after {
+  display: block;
+  position: absolute;
+  content: '';
+  top: 5px;
+  left: 9px;
+  width: 2px;
+  height: 10px;
+  background: currentColor;
+}
+.accordion button[aria-expanded='true'] {
+  color: #000;
+}
+.accordion button[aria-expanded='true'] .icon::after {
+  width: 0;
+}
+.accordion button[aria-expanded='true'] + .accordion-content {
+  opacity: 1;
+  max-height: 9em;
+  transition: all 200ms linear;
+  will-change: opacity, max-height;
+}
+.accordion .accordion-content {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 200ms linear, max-height 200ms linear;
+  will-change: opacity, max-height;
+}
+.accordion .accordion-content p {
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+/* Accordion end  */
